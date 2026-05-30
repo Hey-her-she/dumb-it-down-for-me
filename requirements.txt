@@ -1,0 +1,8 @@
+fastapi
+uvicorn
+streamlit
+pdfplumber
+requests
+ollama
+pydantic
+python-multipart
