@@ -11,7 +11,7 @@ st.set_page_config(
 )
 
 # ---- HEADER ----
-st.title("Explain Like I'm 5")
+st.title("Dumb It Down For Me")
 st.subheader("Paste any text or upload a PDF — get 3 explanations!")
 
 # ---- INPUT MODE TOGGLE ----
