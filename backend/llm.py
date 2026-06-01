@@ -4,6 +4,7 @@ from dotenv import load_dotenv
 load_dotenv()
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 GROQ_URL = "https://api.groq.com/openai/v1/chat/completions"
+API_URL = os.getenv("API_URL", "http://localhost:8000")
 
 PROMPTS = {
     "kid": """You are explaining to a 5 year old child. 
@@ -29,7 +30,7 @@ def get_explanation(text: str, level: str) -> str:
             "Content-Type": "application/json"
         },
         json={
-            "model": "mixtral-8x7b-32768",
+            "model": "llama-3.3-70b-versatile",
             "messages": [
                 {"role": "system", "content": system_prompt},
                 {"role": "user", "content": f"Explain this:\n\n{text}"}
@@ -37,6 +38,7 @@ def get_explanation(text: str, level: str) -> str:
         }
     )
     
+    print("GROQ RESPONSE:", response.json())  # add this line
     return response.json()['choices'][0]['message']['content']
 
 def get_all_explanations(text: str) -> dict:
