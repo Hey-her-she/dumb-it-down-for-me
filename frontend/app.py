@@ -6,7 +6,7 @@ API_URL = os.getenv("API_URL", "http://localhost:8000")
 
 # ---- PAGE CONFIG ----
 st.set_page_config(
-    page_title="Explain Like I'm 5",
+    page_title="Dumb It Down For Me",
     layout="centered"
 )
 
